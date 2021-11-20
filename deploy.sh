@@ -1,6 +1,5 @@
-#!/bin/sh     
- git pull      
- npm install --production      
- pm2 restart all
+#!/bin/sh
+ npm install   
+ pm2 start server.js --name "Website"
  exit
 EOF
