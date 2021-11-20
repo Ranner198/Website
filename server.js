@@ -7,12 +7,12 @@ const app = express();
 const port = 3000;
 
 var options = {
-  key: fs.readFileSync('/privatekey.pem'),
-  cert: fs.readFileSync('/certificate.pem'),
+  key: fs.readFileSync('./privatekey.pem'),
+  cert: fs.readFileSync('./certificate.pem'),
 };
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/index.html'));
+  res.sendFile(path.join(__dirname, './index.html'));
 });
 
 var server = https.createServer(options, app).listen(port, function(){
