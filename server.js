@@ -10,8 +10,8 @@ const port = 3000;
 const letsEncryptPath = "/etc/letsencrypt/live/rancrump.com"
 
 var options = {
-  key: fs.readFileSync(letsEncryptPath + 'privatekey.pem'),
-  cert: fs.readFileSync(letsEncryptPath + 'certificate.pem'),
+  key: fs.readFileSync(letsEncryptPath + '/privatekey.pem'),
+  cert: fs.readFileSync(letsEncryptPath + '/certificate.pem'),
 };
 
 app.get('/', function(req, res) {
