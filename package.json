@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Ranner198/Website/issues"
   },
-  "homepage": "https://github.com/Ranner198/Website#readme"
+  "homepage": "https://github.com/Ranner198/Website#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
