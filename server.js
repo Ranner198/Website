@@ -3,15 +3,12 @@ const path = require('path');
 var https = require('https');
 var fs = require('fs');
 
-
 const app = express();
 const port = 3000;
 
-const letsEncryptPath = "/etc/letsencrypt/live/rancrump.com"
-
 var options = {
-  key: fs.readFileSync(letsEncryptPath + '/privatekey.pem'),
-  cert: fs.readFileSync(letsEncryptPath + '/certificate.pem'),
+  key: fs.readFileSync('/privatekey.pem'),
+  cert: fs.readFileSync('/certificate.pem'),
 };
 
 app.get('/', function(req, res) {
