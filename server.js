@@ -1,10 +1,12 @@
 const express = require('express');
 const path = require('path');
+var http = require('http');
 var https = require('https');
 var fs = require('fs');
 
 const app = express();
-const port = 3000;
+const sslport = 3000;
+const nonsslport = 3001;
 
 var options = {
   key: fs.readFileSync('./privatekey.pem'),
@@ -26,6 +28,9 @@ app.get('/Games', function(req, res) {
   res.sendFile(path.join(__dirname, './Games.html'));
 });
 
-var server = https.createServer(options, app).listen(port, function(){
-  console.log("Express server listening on port " + port);
+var server = https.createServer(options, app).listen(sslport, function(){
+  console.log("Express server listening on port " + sslport);
+});
+var server = http.createServer(app).listen(nonsslport, function(){
+  console.log("Express server listening on port " + nonsslport);
 });
