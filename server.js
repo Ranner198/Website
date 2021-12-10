@@ -15,6 +15,9 @@ var options = {
 
 app.use(express.static('./'))
 
+app.listen('http://rancrump.com/')
+app.listen('https://rancrump.com/')
+
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, './index.html'));
 });
