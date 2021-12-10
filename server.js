@@ -3,6 +3,7 @@ const path = require('path');
 var http = require('http');
 var https = require('https');
 var fs = require('fs');
+var bouncy = require('bouncy');
 
 const app = express();
 const sslport = 3000;
@@ -15,8 +16,13 @@ var options = {
 
 app.use(express.static('./'))
 
-app.listen('http://rancrump.com/')
-app.listen('https://rancrump.com/')
+app.use((req, res, next) => {
+  if (req.headers.host == "rancrump.com") {
+    next();   
+  } 
+  else
+    return;
+})
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, './index.html'));
