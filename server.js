@@ -15,15 +15,6 @@ var options = {
 
 app.use(express.static('./'))
 
-app.use((req, res, next) => {
-  console.log(req.headers.host)
-  if (req.headers.host != "rancrump.com") {    
-    res.redirect('http://turboacq.us:8443/');
-  }
-  else
-    next();
-})
-
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, './index.html'));
 });
@@ -37,9 +28,23 @@ app.get('/Games', function(req, res) {
   res.sendFile(path.join(__dirname, './Games.html'));
 });
 
-var server = https.createServer(options, app).listen(sslport, function(){
+var httpServer = https.createServer(options, app).listen(sslport, function(req, res){
+  if (req.headers.host === 'http://rancrump.com' || req.headers.host === 'http://www.rancrump.com') {
+
+  }  
+  else
+  {
+    res.redirect('http://turboacq.us:8443/');
+  }
   console.log("Express server listening on port " + sslport);
 });
-var server = http.createServer(app).listen(nonsslport, function(){
+var httpsServer = http.createServer(app).listen(nonsslport, function(req, res){
+  if (req.headers.host === 'http://rancrump.com' || req.headers.host === 'http://www.rancrump.com') {
+
+  }
+  else
+  {
+    res.redirect('http://turboacq.us:8443/');
+  }
   console.log("Express server listening on port " + nonsslport);
 });
