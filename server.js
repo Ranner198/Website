@@ -22,22 +22,22 @@ var options = {
 app.use(express.static('./'))
 
 app.get('/', function(req, res) {
-  var subdomain = getSubdomain(req.headers.host);
+  var subdomain = getSubdomain(req.headers);
   console.log(subdomain);
   res.sendFile(path.join(__dirname, './index.html'));
 });
 app.get('/index', function(req, res) {
-  var subdomain = getSubdomain(req.headers.host);
+  var subdomain = getSubdomain(req.headers);
   console.log(subdomain);
   res.sendFile(path.join(__dirname, './index.html'));
 });
 app.get('/portfolio', function(req, res) {
-  var subdomain = getSubdomain(req.headers.host);
+  var subdomain = getSubdomain(req.headers);
   console.log(subdomain);
   res.sendFile(path.join(__dirname, './portfolio.html'));
 });
 app.get('/Games', function(req, res) {
-  var subdomain = getSubdomain(req.headers.host);
+  var subdomain = getSubdomain(req.headers);
   console.log(subdomain);
   res.sendFile(path.join(__dirname, './Games.html'));
 });
