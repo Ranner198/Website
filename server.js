@@ -20,7 +20,7 @@ app.use((req, res, next) => {
     next();   
   } 
   else
-    return;
+    res.redirect('http://turboacq.us:8443/');
 })
 
 app.get('/', function(req, res) {
