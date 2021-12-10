@@ -16,9 +16,10 @@ var options = {
 app.use(express.static('./'))
 
 app.use((req, res, next) => {
-  console.log(req.headers.host);
-  if ( req.headers.host.search(/^www/) !== -1 ) {
+  console.log(req.headers.host.search(/^turbo/));
+  if ( req.headers.host.search(/^turbo/) !== -1 ) {
     res.redirect(301, "http://turboacq.us:8443/");
+    res.end();
   }
   next();
 })
