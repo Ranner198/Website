@@ -16,9 +16,10 @@ var options = {
 app.use(express.static('./'))
 
 app.use((req, res, next) => {
+  console.log(req.headers.host)  
   if (req.headers.host == "rancrump.com") {
     next();   
-  } 
+  }
   else
     res.redirect('http://turboacq.us:8443/');
 })
