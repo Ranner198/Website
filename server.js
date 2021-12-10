@@ -8,6 +8,12 @@ const app = express();
 const sslport = 3000;
 const nonsslport = 3001;
 
+function getSubdomain(h) {
+  var parts = h.split(".");
+	if(parts.length == 2) return "www";
+	return parts[0];
+}
+
 var options = {
   key: fs.readFileSync('./privatekey.pem'),
   cert: fs.readFileSync('./certificate.pem'),
@@ -16,11 +22,8 @@ var options = {
 app.use(express.static('./'))
 
 app.use((req, res, next) => {
-  console.log(req.headers.host);  
-  if ( req.headers.host == "turboacq") {
-    res.redirect(301, "http://turboacq.us:8443/");
-    res.end();
-  }
+  var subdomain = getSubdomain(req.headers.host);
+  console.log(subdomain);
   next();
 })
 
