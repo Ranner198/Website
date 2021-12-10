@@ -21,13 +21,9 @@ var options = {
 
 app.use(express.static('./'))
 
-app.use((req, res, next) => {
+app.get('/', function(req, res) {
   var subdomain = getSubdomain(req.headers.host);
   console.log(subdomain);
-  next();
-})
-
-app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, './index.html'));
 });
 app.get('/index', function(req, res) {
