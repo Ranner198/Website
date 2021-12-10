@@ -27,12 +27,18 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, './index.html'));
 });
 app.get('/index', function(req, res) {
+  var subdomain = getSubdomain(req.headers.host);
+  console.log(subdomain);
   res.sendFile(path.join(__dirname, './index.html'));
 });
 app.get('/portfolio', function(req, res) {
+  var subdomain = getSubdomain(req.headers.host);
+  console.log(subdomain);
   res.sendFile(path.join(__dirname, './portfolio.html'));
 });
 app.get('/Games', function(req, res) {
+  var subdomain = getSubdomain(req.headers.host);
+  console.log(subdomain);
   res.sendFile(path.join(__dirname, './Games.html'));
 });
 
