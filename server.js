@@ -8,12 +8,6 @@ const app = express();
 const sslport = 3000;
 const nonsslport = 3001;
 
-function getSubdomain(h) {
-  var parts = h.split(".");
-	if(parts.length == 2) return "www";
-	return parts[0];
-}
-
 var options = {
   key: fs.readFileSync('./privatekey.pem'),
   cert: fs.readFileSync('./certificate.pem'),
@@ -22,29 +16,30 @@ var options = {
 app.use(express.static('./'))
 
 app.get('/', function(req, res) {
-  var subdomain = getSubdomain(req.headers);
-  console.log(subdomain);
+  console.log("A new request received at " + Date.now());
   res.sendFile(path.join(__dirname, './index.html'));
 });
 app.get('/index', function(req, res) {
-  var subdomain = getSubdomain(req.headers);
-  console.log(subdomain);
+  console.log(req.headers.host);
+  console.log("A new request received at " + Date.now());
   res.sendFile(path.join(__dirname, './index.html'));
 });
 app.get('/portfolio', function(req, res) {
-  var subdomain = getSubdomain(req.headers);
-  console.log(subdomain);
+  console.log("A new request received at " + Date.now());
   res.sendFile(path.join(__dirname, './portfolio.html'));
 });
 app.get('/Games', function(req, res) {
-  var subdomain = getSubdomain(req.headers);
-  console.log(subdomain);
+  console.log("A new request received at " + Date.now());
   res.sendFile(path.join(__dirname, './Games.html'));
 });
 
-var httpServer = https.createServer(options, app).listen(sslport, function(req, res){  
+var server = https.createServer(options, app).listen(sslport, function(){
   console.log("Express server listening on port " + sslport);
 });
-var httpsServer = http.createServer(app).listen(nonsslport, function(req, res){
+
+/*
+var server = http.createServer(app).listen(nonsslport, function(req, res){
   console.log("Express server listening on port " + nonsslport);
+  console.log(req);
 });
+*/
