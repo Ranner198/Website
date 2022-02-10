@@ -26,7 +26,7 @@ app.get('/Games', function(req, res) {
   res.sendFile(path.join(__dirname, './Games.html'));
 });
 
-var server = http.createServer(app).listen(nonsslport, function(req, res){
+var server = http.createServer(app).listen(port, function(req, res){
   console.log("Express server listening on port " + port);
   console.log(req);
 });
