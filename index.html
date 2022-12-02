@@ -1,114 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Ran Crump Website</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
-  .img {
-    height: 200px;
-    background: #aaa;
-  }
-  #banner {
-    background-image: url(./Assets/banner.jpeg);
-    /* Position and center the image to scale nicely on all screens */
-    height: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-  }
-  </style>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #395B64;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+.background-color {
+  color: #fff !important;
+  background-color: #2C3333 !important
+}
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+a { text-decoration: none; }
+</style>
 </head>
-<body>
-
-<div id="banner" class="p-5 bg-primary text-white text-center">
-  <h1>Ran Crump</h1>
-  <h5>Software Engineer and Artist</h5> 
-</div>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="./index.html">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./portfolio.html">Portfolio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./Games.html">Games</a>
-      </li>
-      <!--
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-      -->
-    </ul>
-  </div>
+<body class="background-color">
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="/Assets/AvatarFix.jpeg" style="width:100%">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>PHOTOS</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
 </nav>
 
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-sm-4">
-      <h2>About Me</h2>
-      <h5>Photo of me:</h5>
-      <img class="img" src="./Assets/ProfilePicture.jpeg">
-      <img class="img" src="./Assets/CandR.jpg">      
-      <p>I ride dirtbikes</p>
-      <h3 class="mt-4">My Links</h3>
-      <p>Follow me for more</p>
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item">          
-          <a class="nav-link" href="https://www.linkedin.com/in/ran-crump/">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 34 34" class="global-nav__logo">          
-            <g>
-              <path d="M34,2.5v29A2.5,2.5,0,0,1,31.5,34H2.5A2.5,2.5,0,0,1,0,31.5V2.5A2.5,2.5,0,0,1,2.5,0h29A2.5,2.5,0,0,1,34,2.5ZM10,13H5V29h5Zm.45-5.5A2.88,2.88,0,0,0,7.59,4.6H7.5a2.9,2.9,0,0,0,0,5.8h0a2.88,2.88,0,0,0,2.95-2.81ZM29,19.28c0-4.81-3.06-6.68-6.1-6.68a5.7,5.7,0,0,0-5.06,2.58H17.7V13H13V29h5V20.49a3.32,3.32,0,0,1,3-3.58h.19c1.59,0,2.77,1,2.77,3.52V29h5Z" fill="currentColor"></path>
-            </g>
-          </svg> LinkedIn
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.twitch.tv/ranner198">
-          <img src="./Assets/twitchlogo.png" width="30">
-          Twitch</a>
-        </li>
-      </ul>
-      <hr class="d-sm-none">
-    </div>
-    <div class="col-sm-8">
-      <h2>New Website under constuction</h2>
-      <h5>New Website, Dec 1, 2021</h5>
-      <img class="img" src="https://media.giphy.com/media/3oFyCZm9jPjlzsAwXS/giphy.gif">
-      <p>This website is undergoing new development</p>
-      <p>I decided to save some money and do my own hosting via <a href="https://www.linode.com/">Linode</a> and powered by <a href="https://nodejs.org/en/">Node.js</a></p>
-    </div>
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
   </div>
 </div>
 
-<div class="mt-5 p-4 bg-dark text-white">
-  <div style="text-align: right;">
-    <p>Ran Crump</p>
-    <p id="date"></p>
-  </div>  
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center background-color" id="home">
+    <div style="">
+      <h1 class="w3-jumbo"><span class="w3-hide-small">Hi, I'm </span> Ran Crump</h1>
+      <p>Software Engineer</p>
+      <img src="/Assets/AvatarFix.jpeg" alt="boy" class="w3-image" width="30%" height="0">
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+    <hr style="width:100%" class="w3-opacity">
+    <h4 class="w3-padding-16 w3-text-light-grey">Programming</h4>    
+
+    <div style="color: white !important;">
+
+      <p class="w3-wide">Googling & Stack Overflow</p>
+      <div class="w3-white">
+        <div class="w3-dark-grey" style="height:28px;width:130%"></div>
+      </div>
+
+      <p class="w3-wide">C#</p>
+      <div class="w3-white">
+        <div class="w3-dark-grey" style="height:28px;width:95%"></div>
+      </div>
+      
+      <p class="w3-wide">Javascript</p>
+      <div class="w3-white">
+        <div class="w3-dark-grey" style="height:28px;width:90%"></div>
+      </div>
+
+      <p class="w3-wide">Python</p>
+      <div class="w3-white">
+        <div class="w3-dark-grey" style="height:28px;width:90%"></div>
+      </div>
+
+      <p class="w3-wide">Java</p>
+      <div class="w3-white">
+        <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+      </div>
+
+      <p class="w3-wide">C++</p>
+      <div class="w3-white">
+        <div class="w3-dark-grey" style="height:28px;width:75%"></div>
+      </div>
+    </div>
+
+    <br>
+    <hr style="width:100%" class="w3-opacity">
+    <h4 class="w3-padding-16 w3-text-light-grey">Software</h4>
+
+    <div style="color: white !important;">
+
+      <p class="w3-wide">Unity</p>
+      <div class="w3-white">
+        <div class="w3-dark-grey" style="height:28px;width:99%"></div>
+      </div>
+
+      <p class="w3-wide">VS Code</p>
+      <div class="w3-white">
+        <div class="w3-dark-grey" style="height:28px;width:98%"></div>
+      </div>
+
+      <p class="w3-wide">Visual Studio</p>
+      <div class="w3-white">
+        <div class="w3-dark-grey" style="height:28px;width:95%"></div>
+      </div>
+
+      <p class="w3-wide">Photoshop</p>
+      <div class="w3-white">
+        <div class="w3-dark-grey" style="height:28px;width:98%"></div>
+      </div>
+
+      <p class="w3-wide">Illustrator</p>
+      <div class="w3-white">
+        <div class="w3-dark-grey" style="height:28px;width:90%"></div>
+      </div>
+      
+    </div>
+
+    </div><br>
+    
+    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <div class="w3-half w3-section">
+        <span class="w3-xlarge">3</span><br>
+        Partners
+      </div>
+      <div class="w3-half w3-section">
+        <span class="w3-xlarge">8</span><br>
+        Projects Done
+      </div>
+      <!--
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">999</span><br>
+        Happy Clients
+      </div>      
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">150+</span><br>
+        Meetings
+      </div>
+      -->
+    </div>
+
+    <!--
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+    -->
+    
+    <!-- Grid for pricing tables -->
+    <!---->
+    <!--
+    <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">5GB Storage</li>
+          <li class="w3-padding-16">Mail Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 10</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">50GB Storage</li>
+          <li class="w3-padding-16">Endless Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 25</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>    
+    </div>
+    -->
+    <!-- End Grid/Pricing tables -->
+    <!-- Testimonials -->
+    <!--
+    <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
+    <img src="/w3images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
+    <p>John Doe saved us from a web disaster.</p><br>
+    
+    <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
+    <p>No one is better than John Doe.</p>
+    -->
+  <!-- End About Section -->
+  </div>
+  
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">My Photos</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <div>
+          <img src="/Assets/GroupFinderBot.jpeg" style="width:100%">
+          <h3>Group Finder Bot</h3>
+          <p>The group finder bot is a discord API application hosted with the discord.js framework that implments data calls from TPN tracker network to capture Apex and Fortnite
+            analytics and shows in a real time leaderboard for the server to see players positions.
+          </p> 
+        </div>               
+      </div>
+
+      <div class="w3-half">
+        <img src="/Assets/SpaceApps2022.jpeg" style="width:100%">
+        <h3>Space Apps Challange 2022</h3>
+        <p>A real time NASA ISS 3d Tracker built with CesiumJs using TLE orbital data, see the ISS in real time with updated and lagged positional data hosted from NASA.Gov</p>
+      </div>
+      
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Huntsville, US</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +123456789</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: rancrump46@gmail.com</p>
+    </div><br>
+    <p>Let's get in touch. Send me a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <!--
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    -->
+    <a href="https://www.instagram.com/ran_crump.js/" class="fa fa-instagram w3-hover-opacity"></a>    
+    <a href="https://www.linkedin.com/in/ran-crump/" class="fa fa-linkedin w3-hover-opacity"></a>
+    <a href="https://www.twitch.tv/ranner198" class="fa fa-twitch w3-hover-opacity"></a>
+    <a href="https://www.youtube.com/channel/UCOw5OvcWspoWe-Vm2F9nefQ" class="fa fa-youtube w3-hover-opacity"></a>
+    <!--<p class="w3-medium">Powered by <a href="" target="_blank" class="w3-hover-text-green">Node.js</a></p>-->
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
 </div>
 
-<script>
-window.onload = setInterval(clock,1000);
-clock();
-function clock()
-{
-  n =  new Date();
-  y = n.getFullYear();
-  m = n.getMonth() + 1;
-  d = n.getDate();
-  h = n.getHours();
-  M = n.getMinutes();
-  s = n.getSeconds();
-  document.getElementById("date").innerHTML = m + "/" + d + "/" + y + " " + h.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}) + ":" + M.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}) + ":" + s.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
-}
-</script>
 </body>
 </html>
